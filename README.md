@@ -47,7 +47,7 @@ Wait until finished downloading and installing and then reboot to activate chang
 # Step 4: Make file on the pi for the script
   - change the directory to the one where the script will be "cd /home/pi"
   - create the file where the script will be "sudo nano buttonscript.py"
-You can type the script in right now or you can use an ftp to find that file you just created and copy and paste the code that i've uploaded (i recommend copy and pasting)
+You can type the script in right now or you can use an ftp to find that file you just created and copy and paste the code that i've added to the bottom of this guide (i recommend copy and pasting)
 
 # Step 5: Have the script start on boot
   - "cd /lib/systemd/system/"
@@ -101,3 +101,49 @@ Use this chart as a reference https://pinout.xyz/ for the pin layout
 # Everything should be ready! Woohoo!
 Go ahead and plug your pi into your tv and wait for it to load to the login. Then press your button and yell out in joy when it plays your favorite episode (or doesnt work and you get to start retracing your steps)
 
+# here is the python script 
+
+#!/usr/bin/python
+
+import RPi.GPIO as GPIO
+import time
+import os
+import random
+
+buttonPin = 17 
+
+directory = "/home/pi/simpsons/"
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(buttonPin, GPIO.IN)
+
+def playEpisode():
+	episode = random.choice(os.listdir(directory))
+	cmd = "nohup omxplayer -b -o hdmi "+"'"+directory+episode+"' &"
+	os.system('killall omxplayer.bin')
+	os.system(cmd)
+
+
+try:
+
+    # measure the time the button is pressed as timeA
+    GPIO.wait_for_edge(buttonPin, GPIO.RISING)
+    timeA = time.time()
+
+    # measure the time the button is released as timeB
+    GPIO.wait_for_edge(buttonPin, GPIO.FALLING)
+    timeB = time.time()
+
+    # take the first time away from the second time, to get the difference
+    timeDifference = timeB - timeA
+
+    # if the difference in times is more than 4 seconds, shutdown, or else play an episode and restart this script
+    if timeDifference > 4:
+        os.system('sudo shutdown now')
+    else:
+        playEpisode()
+        # point this to the location of this file
+        os.system('sudo python /home/pi/buttonscript.py')
+
+except KeyboardInterrupt:  
+    GPIO.cleanup() 
