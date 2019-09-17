@@ -4,21 +4,20 @@
 A guide to a raspberry pi shuffler for tv shows
 
 About a year ago i was looking for cool raspberry pi projects to do. I stumbled across one that i immediately new 
-I needed to build. The Simpsons Shuffler by Stephen Coyle. After hours of building and making the code he provided work for 
-me and my needs (and a little help from Stephen himself) I had a pi zero that shuffles episodes of the simpsons on button push and ALSO safely turned off on a long button press. I posted my project to reddit and have been recieving requests for help
-ever since. So i have decided to finally make my own guide to take begginers step by step through the process. 
+I needed to build, The Simpsons Shuffler by Stephen Coyle. After hours of building and making the code he provided work for 
+me and my needs (and a little help from Stephen himself) I had a pi zero that shuffles episodes of the simpsons on button push and ALSO safely turned off the pi on a long button press. I posted my project to reddit and have been recieving requests for help ever since. So I have decided to finally make my own step by step guide. 
 
 
 
 
 # prerequisites
--Cyberduck (sftp) for mac
--applepi baker (to add image to sd card) for mac
--Filezilla (sftp) for windows
--Etcher (to add image to sd card) on mac and windows
--usb keyboard
--mini hdmi to hdmi adapter
--microusb to usb adapter
+  - Cyberduck (sftp) for mac
+  - applepi baker (to add image to sd card) for mac
+  - Filezilla (sftp) for windows
+  - Etcher (to add image to sd card) on mac and windows
+  - usb keyboard
+  - mini hdmi to hdmi adapter
+  - microusb to usb adapter
 
 This project was made with a raspberry pi zero w (to make connecting the wires easier). It can be done on other pi's as well, but for the sake of this guide its going to be pi zero w specific.
 
