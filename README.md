@@ -19,7 +19,7 @@ me and my needs (and a little help from Stephen himself) I had a pi zero that sh
   - mini hdmi to hdmi adapter
   - microusb to usb adapter
 
-This project was made with a raspberry pi zero w (to make connecting the wires easier). It can be done on other pi's as well, but for the sake of this guide its going to be pi zero w specific.
+This project was made with a raspberry pi zero w. It can be done on other pi's as well, but for the sake of this guide it's going to be pi zero w specific.
 
 
 This is a work in progress and all feedback is welcome!
@@ -27,31 +27,30 @@ This is a work in progress and all feedback is welcome!
 # Setting up the Raspberry Pi Zero W Simpsons Shuffler
 
 # Step 1: Rasbian lite image
-  - Download Rasbian lite image from here https://www.raspberrypi.org/downloads/raspbian/
-  - Bake image onto your sd card (i used 64gb) I used ApplePi Baker
+  - Download the Rasbian lite image https://www.raspberrypi.org/downloads/raspbian/
+  - Bake image onto your sd card using ApplePi Baker or alternative  
   
 # Step 2: Activate WiFi
-  - plug your keyboard into your pi
+  - Plug your keyboard into your pi
   - Plug pi into a tv or monitor and let it boot for the first time (can take a while so be patient)
-  - username is "pi" password is "raspberry"
-  - type into the command line "sudo raspi-config" and follow the instructions to set up wifi
-If having trouble with WiFi please refer here https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md
+  - Default username is "pi" password is "raspberry"
+  - Type into the command line "sudo raspi-config" and hit enter. Follow the instructions to set up wifi
+    *If having trouble with WiFi please refer here https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md
 
-# Step 3: Get omx player (player we will be using)
-  - Type into the command line "sudo apt-get install omxplayer"
-
-Wait until finished downloading and installing and then reboot to activate changes
-  - "sudo reboot" 
+# Step 3: Install omx player (This is how we will be playing the video files)
+  - Type into the command line "sudo apt-get install omxplayer" and press enter.
+  - Once finished downloading and installing reboot the pi
+  -  Type "sudo reboot" and hit enter
   
 # Step 4: Make file on the pi for the script
-  - change the directory to the one where the script will be "cd /home/pi"
-  - create the file where the script will be "sudo nano buttonscript.py"
-You can type the script in right now or you can use an ftp to find that file you just created and copy and paste the code that i've added to the bottom of this guide (i recommend copy and pasting)
+  - Change the directory to where the script will live "cd /home/pi"
+  - Create a file in that directory "sudo nano buttonscript.py"
+You can type the script in right now ssh in later and copy and paste the code that I've added to the bottom of this guide (I recommend copy and pasting)
 
 # Step 5: Have the script start on boot
-  - "cd /lib/systemd/system/"
-  - create button.service file "sudo nano button.service"
-Add the text below to button.service
+  - Type "cd /lib/systemd/system/" and hit enter
+  - Create button.service file "sudo nano button.service"
+  * Add the text below to button.service
 
 [Unit]
 Description=buttonscript
@@ -67,26 +66,26 @@ Restart=on-abort
 WantedBy=multi-user.target
 
 # Step 5: Activate the startup script we just added
-  - "sudo chmod 644 /lib/systemd/system/button.service"
-  - "chmod +x /home/pi/buttonscript.py"
-  - "sudo systemctl damon-reload"
-  - "sudo systemctl enable buttonscript"
-  - "sudo systemctl start buttonscript"
+  - Type "sudo chmod 644 /lib/systemd/system/button.service" and hit enter
+  - Type "chmod +x /home/pi/buttonscript.py" and hit enter
+  - Type "sudo systemctl damon-reload" and hit enter
+  - Type "sudo systemctl enable buttonscript" and hit enter
+  - Type "sudo systemctl start buttonscript" and hit enter
   
-Step 6: Now time to add video files (check to make sure video files are compatable with omxplayer!)
-  - "cd /home/pi"
-  - create file for simpsons episodes  "sudo nano simpsons"
-  - reboot pi "sudo reboot"
+# Step 6: Add video files (check to make sure video files are compatable with omxplayer !important)
+  - Type "cd /home/pi" and hit enter
+  - Create a file for Simpsons episodes, type "sudo nano simpsons" and hit enter
+  - Reboot pi "sudo reboot"
+  - Use an ftp program to ssh into your pi and find the Simpson file you just made.
+  - Drag all of the video files you want to shuffle into that folder. This will take a LONG time to transfer the files, so be ready to leave it overnight.
+
+# THATS IT FOR SETTING UP, TIME FOR WIRING!!
+  *If your pi has a header pre-soldered in simply use jumper wires for connecting, if not be prepared to solder.  
   
-Use an ftp program to ssh into your pi and find the simpson file you just made. Drag all of the video files you want to shuffle into that folder. This will take a LONG time to transfer the files, so be ready to leave it overnight.
+You can connect the wires to both the 10k resistor and the button by soldering and using spade connectors.  
+  *Make sure you are using normally open button !important
 
-# THATS IT FOR SETTING UP TIME FOR WIRING
-For the wires if you are using the zero w h like i was you can use jumper wires to connect to the pi. 
-For conecting the wires to the 10k resistor and and the button you can solder or rig it up with electrical tape.
-I personally used spade connectors to connect to my button
-Make sure you are using normally open button!
-
-I will upload a diagram to show more clearly how to wire the button. 
+I have uploaded a diagram to give a visual guide.  
 Use this chart as a reference https://pinout.xyz/ for the pin layout
 
 - we are using Pin 11 (BCM 17) and our ground will be Pin 6
@@ -98,7 +97,7 @@ Use this chart as a reference https://pinout.xyz/ for the pin layout
 - Next wire is 3.3v (pin 1) to the other side of the button
 
 # Everything should be ready! Woohoo!
-Go ahead and plug your pi into your tv and wait for it to load to the login. Then press your button and yell out in joy when it plays your favorite episode (or doesnt work and you get to start retracing your steps)
+Go ahead and plug your pi into your tv and wait for it to load to the login. Then press your button and yell out in joy when it plays your favorite episode (or doesnt work and you get to start re-tracing your steps)
 
 # here is the python script 
 
