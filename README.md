@@ -40,18 +40,23 @@ This project was made with a Raspberry Pi Zero W. It can be done on other pi's a
     *If having trouble with WiFi please refer here https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md
 
 ## Step 3: Install omx player (This is how we will be playing the video files)
-  - Type into the command line "sudo apt-get install omxplayer" and press enter.
+  - Type the following into the command line and press enter.
+  ```sudo apt-get install omxplayer ```
   - Once finished downloading and installing reboot the pi
-  -  Type "sudo reboot" and hit enter
+  -  Type the following and hit enter to reboot
+  ```sudo reboot``` 
   
 ## Step 4: Make file on the pi for the script
   - Change the directory to where the script will live "cd /home/pi"
-  - Create a file in that directory "sudo nano buttonscript.py"
+  - Create a file in that directory by typing the following
+  ``` sudo nano buttonscript.py ```
   *You can type the script in right now ssh in later and copy and paste the code that I've added to this guide (I recommend copy and pasting)*
 
 ## Step 5: Have the script start on boot
-  - Type "cd /lib/systemd/system/" and hit enter
-  - Create button.service file "sudo nano button.service"
+  - Type the following and hit enter
+  ``` cd /lib/systemd/system/ ```
+  - Create button.service file 
+  ```sudo nano button.service```
   * Add the text below to button.service*
 ```
 [Unit]
