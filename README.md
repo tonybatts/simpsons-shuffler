@@ -1,31 +1,32 @@
-# Raspberry Pi Simpsons-Shuffler Guide 
-*Short press of button will play random episode. Long press will shutdown pi
-*Button diagram and python script are in repository
+# Simpsons Shuffler 
+*Short press of button will play random episode. Long press will shutdown pi*
+*Button diagram and python script are in repository*
 
-## A guide to a raspberry pi shuffler for tv shows
+## This guide will walk you through building your own Simpsons Shuffler
 
-About a year ago i was looking for cool raspberry pi projects to do. I stumbled across one that i immediately new 
+About a year ago i was looking for cool raspberry pi projects to do. I stumbled across one that I immediately new 
 I needed to build, The Simpsons Shuffler by Stephen Coyle. After hours of building and making the code he provided work for 
-me and my needs (and a little help from Stephen himself) I had a pi zero that shuffles episodes of the simpsons on button push and ALSO safely turned off the pi on a long button press. I posted my project to reddit and have been recieving requests for help ever since. So I have decided to finally make my own step by step guide. 
+me and my needs (and a little help from Stephen himself) I had a Raspberry Pi Zero W that shuffles episodes of the simpsons on button push and ALSO safely turned off the pi on a long button press. 
 
+I posted my project to reddit and have been recieving requests for help ever since. As it turns out, there is no step by step guide for this project, and none that include a power off feature. Until now!
 
 
 
 ### prerequisites
-  - Cyberduck (sftp) for mac
-  - applepi baker (to add image to sd card) for mac
-  - Filezilla (sftp) for windows
-  - Etcher (to add image to sd card) on mac and windows
-  - usb keyboard
-  - mini hdmi to hdmi adapter
-  - microusb to usb adapter
+  - Cyberduck for mac (or whatever ftp software you prefer)
+    *Filezilla for windows*
+  - Applepi Baker (to add the image to sd card) for mac
+    *Etcher on mac and windows*
+  - Usb keyboard
+  - Mini hdmi to hdmi adapter if using the Pi Zero
+  - Micro usb to usb adapter
 
-This project was made with a raspberry pi zero w. It can be done on other pi's as well, but for the sake of this guide it's going to be pi zero w specific.
+This project was made with a Raspberry Pi Zero W. It can be done on other pi's as well, but for the sake of this guide it's going to be Pi Zero W specific.
 
 
 *This is a work in progress and all feedback is welcome!*
 
-## Setting up the Raspberry Pi Zero W Simpsons Shuffler
+# Lets get started!
 
 ## Step 1: Rasbian lite image
   - Download the Rasbian lite image https://www.raspberrypi.org/downloads/raspbian/
@@ -52,7 +53,7 @@ This project was made with a raspberry pi zero w. It can be done on other pi's a
   - Type "cd /lib/systemd/system/" and hit enter
   - Create button.service file "sudo nano button.service"
   * Add the text below to button.service*
-
+```
 [Unit]
 Description=buttonscript
 After=multi-user.target
@@ -65,6 +66,7 @@ Restart=on-abort
 
 [Install]
 WantedBy=multi-user.target
+```
 
 ## Step 5: Activate the startup script we just added
   - Type "sudo chmod 644 /lib/systemd/system/button.service" and hit enter
@@ -82,12 +84,12 @@ WantedBy=multi-user.target
 
 ## THATS IT FOR SETTING UP, TIME FOR WIRING!!
   *If your pi has a header pre-soldered in simply use jumper wires for connecting, if not be prepared to solder.* 
-  
-You can connect the wires to both the 10k resistor and the button by soldering and using spade connectors.  
-  *Make sure you are using normally open button !important*
+  *You can connect the wires to both the 10k resistor and the button by soldering and using spade connectors.*
+  **Make sure you are using normally open button !important**
 
-I have uploaded a diagram to give a visual guide.  
-Use this chart as a reference https://pinout.xyz/ for the pin layout
+I have uploaded a diagram to give a visual guide, use the diagram and the instructions below in tandum to better undstand how to wire up your button to your pi. 
+
+Use this chart as a reference https://pinout.xyz/ for the pin layout on the Raspberry Pi
 
 - we are using Pin 11 (BCM 17) and our ground will be Pin 6
 
@@ -100,7 +102,7 @@ Use this chart as a reference https://pinout.xyz/ for the pin layout
 ## Everything should be ready! Woohoo!
 Go ahead and plug your pi into your tv and wait for it to load to the login. Then press your button and yell out in joy when it plays your favorite episode (or doesnt work and you get to start re-tracing your steps)
 
-## here is the python script 
+## Python script below 
 
 ```
 #!/usr/bin/python
