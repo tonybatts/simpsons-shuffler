@@ -1,5 +1,6 @@
-# simpsons-shuffler Guide 
-# Short press of button will play random episode. Long press will shutdown pi
+# Raspberry Pi Simpsons-Shuffler Guide 
+*Short press of button will play random episode. Long press will shutdown pi
+*Button diagram and python script are in repository
 
 A guide to a raspberry pi shuffler for tv shows
 
@@ -45,7 +46,7 @@ This is a work in progress and all feedback is welcome!
 # Step 4: Make file on the pi for the script
   - Change the directory to where the script will live "cd /home/pi"
   - Create a file in that directory "sudo nano buttonscript.py"
-You can type the script in right now ssh in later and copy and paste the code that I've added to the bottom of this guide (I recommend copy and pasting)
+  *You can type the script in right now ssh in later and copy and paste the code that I've added to this guide (I recommend copy and pasting)
 
 # Step 5: Have the script start on boot
   - Type "cd /lib/systemd/system/" and hit enter
