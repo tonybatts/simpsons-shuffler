@@ -102,6 +102,7 @@ Go ahead and plug your pi into your tv and wait for it to load to the login. The
 
 ## here is the python script 
 
+```
 #!/usr/bin/python
 
 import RPi.GPIO as GPIO
@@ -146,3 +147,4 @@ try:
 
 except KeyboardInterrupt:  
     GPIO.cleanup() 
+```
