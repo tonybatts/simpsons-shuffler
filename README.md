@@ -69,16 +69,24 @@ WantedBy=multi-user.target
 ```
 
 ## Step 5: Activate the startup script we just added
-  - Type "sudo chmod 644 /lib/systemd/system/button.service" and hit enter
-  - Type "chmod +x /home/pi/buttonscript.py" and hit enter
-  - Type "sudo systemctl damon-reload" and hit enter
-  - Type "sudo systemctl enable buttonscript" and hit enter
-  - Type "sudo systemctl start buttonscript" and hit enter
+  - Type the following and then hit enter
+  ``` sudo chmod 644 /lib/systemd/system/button.service ``` 
+  - Type the following and then hit enter
+  ``` chmod +x /home/pi/buttonscript.py ```
+  - Type the following and then hit enter
+  ``` sudo systemctl damon-reload ```
+  - - Type the following and then hit enter
+  ``` sudo systemctl enable buttonscript ```
+  - - Type the following and then hit enter
+  ``` sudo systemctl start buttonscript ```
   
 ## Step 6: Add video files (check to make sure video files are compatable with omxplayer !important)
-  - Type "cd /home/pi" and hit enter
-  - Create a file for Simpsons episodes, type "sudo nano simpsons" and hit enter
-  - Reboot pi "sudo reboot"
+  - Type the following and then hit enter
+  ``` cd /home/pi ``` 
+  - Create a file for Simpsons episodes
+  ``` sudo nano simpsons ```
+  - Reboot pi "
+  ``` sudo reboot ```
   - Use an ftp program to ssh into your pi and find the Simpson file you just made.
   - Drag all of the video files you want to shuffle into that folder. This will take a LONG time to transfer the files, so be ready to leave it overnight.
 
