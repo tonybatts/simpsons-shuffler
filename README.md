@@ -23,7 +23,7 @@ me and my needs (and a little help from Stephen himself) I had a pi zero that sh
 This project was made with a raspberry pi zero w. It can be done on other pi's as well, but for the sake of this guide it's going to be pi zero w specific.
 
 
-This is a work in progress and all feedback is welcome!
+*This is a work in progress and all feedback is welcome!*
 
 ## Setting up the Raspberry Pi Zero W Simpsons Shuffler
 
@@ -46,12 +46,12 @@ This is a work in progress and all feedback is welcome!
 ## Step 4: Make file on the pi for the script
   - Change the directory to where the script will live "cd /home/pi"
   - Create a file in that directory "sudo nano buttonscript.py"
-  *You can type the script in right now ssh in later and copy and paste the code that I've added to this guide (I recommend copy and pasting)
+  *You can type the script in right now ssh in later and copy and paste the code that I've added to this guide (I recommend copy and pasting)*
 
 ## Step 5: Have the script start on boot
   - Type "cd /lib/systemd/system/" and hit enter
   - Create button.service file "sudo nano button.service"
-  * Add the text below to button.service
+  * Add the text below to button.service*
 
 [Unit]
 Description=buttonscript
@@ -81,10 +81,10 @@ WantedBy=multi-user.target
   - Drag all of the video files you want to shuffle into that folder. This will take a LONG time to transfer the files, so be ready to leave it overnight.
 
 ## THATS IT FOR SETTING UP, TIME FOR WIRING!!
-  *If your pi has a header pre-soldered in simply use jumper wires for connecting, if not be prepared to solder.  
+  *If your pi has a header pre-soldered in simply use jumper wires for connecting, if not be prepared to solder.* 
   
 You can connect the wires to both the 10k resistor and the button by soldering and using spade connectors.  
-  *Make sure you are using normally open button !important
+  *Make sure you are using normally open button !important*
 
 I have uploaded a diagram to give a visual guide.  
 Use this chart as a reference https://pinout.xyz/ for the pin layout
