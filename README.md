@@ -77,13 +77,13 @@ WantedBy=multi-user.target
   - Type the following and then hit enter
   ``` sudo chmod 644 /lib/systemd/system/button.service ``` 
   - Type the following and then hit enter
-  ``` chmod +x /home/pi/buttonscript.py ```
+  ``` sudo chmod +x /home/pi/buttonscript.py ```
   - Type the following and then hit enter
-  ``` sudo systemctl damon-reload ```
-  - - Type the following and then hit enter
-  ``` sudo systemctl enable buttonscript ```
-  - - Type the following and then hit enter
-  ``` sudo systemctl start buttonscript ```
+  ``` sudo systemctl daemon-reload ```
+  - Type the following and then hit enter
+  ``` sudo systemctl enable button ```
+  - Type the following and then hit enter
+  ``` sudo systemctl start button ```
   
 ## Step 6: Add video files (check to make sure video files are compatable with omxplayer !important)
   - Type the following and then hit enter
