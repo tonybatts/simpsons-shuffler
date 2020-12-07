@@ -52,8 +52,11 @@ This project was made with a Raspberry Pi Zero W. It can be done on other pi's a
   ``` sudo nano buttonscript.py ```
   *You can type the script in right now ssh in later and copy and paste the code that I've added to this guide (I recommend copy and pasting)*
   After you either type in the code now, or decide to copy and paste later make sure you save your changes and then exit the file by hitting the following keys on your keyboard:
-  ``` control + o ``` to save 
-  ``` control + x ``` to close the editor
+  ``` 
+  control + o 
+  control + x
+  ``` 
+  Holding control and pressing o will save your file. Holding control and pressing x will close the editor.
 
 ## Step 5: Have the script start on boot
   - Type the following and hit enter
