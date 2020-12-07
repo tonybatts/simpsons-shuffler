@@ -83,6 +83,7 @@ Restart=on-abort
 [Install]
 WantedBy=multi-user.target
 ```
+  - Save and close the file
 
 ## Step 5: Activate the startup script we just added
   - Type the following and then hit enter
