@@ -58,7 +58,7 @@ This project was made with a Raspberry Pi Zero W. It can be done on other pi's a
   ``` 
   Holding control and pressing o will save your file. Holding control and pressing x will close the editor.
   Navigate back to the home directory by typing in the following command
-  ``` cd ../../
+  ``` cd ../../ ```
 
 ## Step 5: Have the script start on boot
   - Type the following and hit enter
