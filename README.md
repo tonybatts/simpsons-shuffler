@@ -88,8 +88,8 @@ WantedBy=multi-user.target
 ## Step 6: Add video files (check to make sure video files are compatable with omxplayer !important)
   - Type the following and then hit enter
   ``` cd /home/pi ``` 
-  - Create a file for Simpsons episodes
-  ``` sudo nano simpsons ```
+  - Create a folder for Simpsons episodes
+  ``` sudo mkdir simpsons ```
   - Reboot pi "
   ``` sudo reboot ```
   - Use an ftp program to ssh into your pi and find the Simpson file you just made.
