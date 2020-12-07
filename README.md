@@ -54,10 +54,14 @@ This project was made with a Raspberry Pi Zero W. It can be done on other pi's a
   After you either type in the code now, or decide to copy and paste later make sure you save your changes and then exit the file by hitting the following keys on your keyboard:
   ``` 
   control + o 
+  ```
+  *Holding control and pressing o will save your file*
+  ```
   control + x
   ``` 
-  Holding control and pressing o will save your file. Holding control and pressing x will close the editor.
-  Navigate back to the home directory by typing in the following command
+  *Holding control and pressing x will close the editor*
+  
+  - Navigate back to the home directory by typing in the following command
   ``` cd ../../ ```
 
 ## Step 5: Have the script start on boot
