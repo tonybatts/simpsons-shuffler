@@ -1,6 +1,5 @@
 # Simpsons Shuffler 
 *Short press of button will play random episode. Long press will shutdown pi*
-*Button diagram and python script are in repository*
 
 ## This guide will walk you through building your own Simpsons Shuffler
 
