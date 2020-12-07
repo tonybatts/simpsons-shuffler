@@ -46,7 +46,7 @@ This project was made with a Raspberry Pi Zero W. It can be done on other pi's a
   -  Type the following and hit enter to reboot
   ```sudo reboot``` 
   
-## Step 4: Make file on the pi for the script
+## Step 4: Create a file on the pi for the button script
   - Change the directory to where the script will live "cd /home/pi"
   - Create a file in that directory by typing the following
   ``` sudo nano buttonscript.py ```
